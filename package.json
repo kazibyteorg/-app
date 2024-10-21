@@ -1,39 +1,60 @@
 {
   "name": "@kazibyte/node-auth-helpers",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./dist/index.js",
+    "build": "tsc & tsc-alias",
+    "start": "node dist/index.js",
     "dev": "ts-node-dev -r tsconfig-paths/register ./src/index.ts",
-    "build": "tsc & tsc-alias"
+    "format": "prettier --write \"src/**/*.(js|ts)\"",
+    "lint": "eslint src --ext .js,.ts",
+    "lint:fix": "eslint src --fix --ext .js,.ts",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/bcryptjs": "^2.4.6",
-    "@types/express": "^5.0.0",
-    "@types/express-session": "^1.18.0",
-    "@types/jsonwebtoken": "^9.0.7",
-    "axios": "^1.7.7",
-    "bcryptjs": "^2.4.3",
-    "express-session": "^1.18.1",
-    "jest": "^29.7.0",
-    "jsonwebtoken": "^9.0.2",
-    "speakeasy": "^2.0.0",
-    "ts-jest": "^29.2.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^29.5.13",
-    "@types/node": "^22.7.7",
-    "@types/supertest": "^6.0.2",
+    "@types/node": "^22.7.5",
     "ts-node-dev": "^2.0.0",
     "tsc": "^2.0.4",
     "tsc-alias": "^1.8.10",
-    "tsconfig-paths": "^4.2.0"
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.2"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "keywords": [
+  
+],
+  "description": "",
+  "author": {
+    "name": "Zobaidul Kazi",
+    "url": "https://zobkazi.github.io"
+  },
+  "maintainers": [
+    {
+      "name": "Zobaidul Kazi",
+      "email": "zobkazi@yahoo.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazibyte/node-auth-helpers.git"
+  },
+  "homepage": "",
+  "bugs": {
+    "url": "https://github.com/kazibyte/node-auth-helpers/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "directories": {
+    "lib": "dist"
   }
 }
