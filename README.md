@@ -4,4 +4,4 @@
 
 ## Projects
 
-- [kazibyte/app](https://github.com/kazibyte/app)
+- [kazibyte/app](https://github.com/kazibyte/node-auth-helpers)
